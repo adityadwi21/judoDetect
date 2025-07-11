@@ -27,10 +27,6 @@
 /* --- Base Styles --- */
 
 .judol-blur {
-  cursor: pointer;
-  user-select: none;
-  position: relative;
-  transition: var(--transition-normal);
   opacity: 0.6;
 }
 
@@ -117,57 +113,6 @@
   background: var(--color-low);
 }
 
-.judol-stats {
-  position: fixed;
-  top: 80px;
-  right: 20px;
-  background: rgba(0, 0, 0, 0.9);
-  color: white;
-  padding: 15px;
-  border-radius: 12px;
-  font-size: 12px;
-  z-index: 10000;
-  font-family: var(--font-mono);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-  min-width: 200px;
-}
-
-.judol-stats-hidden {
-  display: none;
-}
-
-.judol-stats div {
-  margin-bottom: 4px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.judol-stats span {
-  font-weight: bold;
-  color: #4ade80; /* Green for stats */
-}
-
-/* --- Progress & Scanning --- */
-
-.judol-scanning {
-  position: fixed;
-  top: 50px;
-  right: 20px;
-  background: rgba(59, 130, 246, 0.9);
-  color: white;
-  padding: 8px 12px;
-  border-radius: 20px;
-  font-size: 11px;
-  z-index: 10001;
-  font-family: var(--font-primary);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  animation: slideInRight 0.3s ease-out;
-}
-
 .judol-progress {
   position: fixed;
   top: 0;
@@ -204,23 +149,10 @@
 
 /* --- Responsive Design --- */
 @media (max-width: 768px) {
-  .judol-stats {
-    top: 60px;
-    right: 10px;
-    padding: 10px;
-    font-size: 10px;
-    min-width: 150px;
-  }
   .judol-warning {
     margin: 6px 0;
     padding: 8px;
     font-size: 11px;
-  }
-  .judol-scanning {
-    top: 40px;
-    right: 10px;
-    padding: 6px 10px;
-    font-size: 10px;
   }
 }
 
@@ -233,16 +165,6 @@
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-@keyframes slideInRight {
-  from {
-    opacity: 0;
-    transform: translateX(100px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
   }
 }
 @keyframes warningPulse {
