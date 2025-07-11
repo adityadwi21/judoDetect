@@ -1,0 +1,266 @@
+:root {
+  /* Colors */
+  --color-high: #ef4444;
+  --color-medium: #f59e0b;
+  --color-low: #eab308;
+  --color-scan: #3b82f6;
+  --color-text-dark: #f9fafb;
+  --color-text-light: #2d3748;
+
+  /* Backgrounds */
+  --bg-high-light: linear-gradient(135deg, #fef2f2 0%, #fecaca 100%);
+  --bg-medium-light: linear-gradient(135deg, #fffbeb 0%, #fed7aa 100%);
+  --bg-low-light: linear-gradient(135deg, #fefce8 0%, #fde68a 100%);
+  --bg-warning-dark: linear-gradient(135deg, #1f1f1f 0%, #2d1b1b 100%);
+  --bg-toggle-light: #e2e8f0;
+  --bg-toggle-dark: #374151;
+
+  /* Fonts */
+  --font-primary: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "Courier New", monospace;
+
+  /* Transitions & Animations */
+  --transition-fast: all 0.2s ease;
+  --transition-normal: all 0.3s ease;
+}
+
+/* --- Base Styles --- */
+
+.judol-blur {
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  transition: var(--transition-normal);
+  opacity: 0.6;
+}
+
+.judol-blur:hover {
+  opacity: 0.8;
+}
+
+.judol-warning {
+  margin: 8px 0;
+  padding: 12px;
+  border-radius: 8px;
+  font-family: var(--font-primary);
+  font-size: 13px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  animation: slideIn 0.3s ease-out;
+  position: relative;
+  overflow: hidden;
+  border-width: 2px;
+  border-style: solid;
+}
+
+.toggle-comment {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 4px 8px;
+  border: 1px solid #cbd5e0;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 11px;
+  transition: var(--transition-fast);
+  cursor: pointer;
+}
+
+.toggle-comment:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Severity & Confidence --- */
+
+/* Blur Levels */
+.judol-blur.high-severity {
+  filter: blur(12px);
+}
+.judol-blur.medium-severity {
+  filter: blur(8px);
+}
+.judol-blur.low-severity {
+  filter: blur(5px);
+}
+
+/* Warning Colors */
+.judol-warning.high-severity {
+  background: var(--bg-high-light);
+  border-color: var(--color-high);
+  animation: warningPulse 1s infinite, slideIn 0.3s ease-out;
+}
+.judol-warning.medium-severity {
+  background: var(--bg-medium-light);
+  border-color: var(--color-medium);
+}
+.judol-warning.low-severity {
+  background: var(--bg-low-light);
+  border-color: var(--color-low);
+}
+
+/* --- Indicators & Panels --- */
+
+.confidence-indicator {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-left: 8px;
+  animation: blink 1.5s infinite;
+}
+.confidence-high {
+  background: var(--color-high);
+}
+.confidence-medium {
+  background: var(--color-medium);
+}
+.confidence-low {
+  background: var(--color-low);
+}
+
+.judol-stats {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+  padding: 15px;
+  border-radius: 12px;
+  font-size: 12px;
+  z-index: 10000;
+  font-family: var(--font-mono);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  min-width: 200px;
+}
+
+.judol-stats-hidden {
+  display: none;
+}
+
+.judol-stats div {
+  margin-bottom: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.judol-stats span {
+  font-weight: bold;
+  color: #4ade80; /* Green for stats */
+}
+
+/* --- Progress & Scanning --- */
+
+.judol-scanning {
+  position: fixed;
+  top: 50px;
+  right: 20px;
+  background: rgba(59, 130, 246, 0.9);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  z-index: 10001;
+  font-family: var(--font-primary);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  animation: slideInRight 0.3s ease-out;
+}
+
+.judol-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: rgba(59, 130, 246, 0.2);
+  z-index: 10002;
+}
+
+.judol-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #3b82f6, #10b981);
+  transition: width 0.3s ease;
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+}
+
+/* --- Dark Mode --- */
+@media (prefers-color-scheme: dark) {
+  .judol-warning {
+    background: var(--bg-warning-dark);
+    border-color: var(--color-high);
+    color: var(--color-text-dark);
+  }
+  .toggle-comment {
+    background: var(--bg-toggle-dark);
+    border-color: #4b5563;
+    color: var(--color-text-dark);
+  }
+  .toggle-comment:hover {
+    background: #4b5563;
+  }
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+  .judol-stats {
+    top: 60px;
+    right: 10px;
+    padding: 10px;
+    font-size: 10px;
+    min-width: 150px;
+  }
+  .judol-warning {
+    margin: 6px 0;
+    padding: 8px;
+    font-size: 11px;
+  }
+  .judol-scanning {
+    top: 40px;
+    right: 10px;
+    padding: 6px 10px;
+    font-size: 10px;
+  }
+}
+
+/* --- Keyframe Animations --- */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes warningPulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+}
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0.3;
+  }
+}

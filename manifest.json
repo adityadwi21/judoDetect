@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Judol Detector",
+  "version": "2.0",
+  "description": "Deteksi komentar promosi judi online di YouTube dan beri peringatan.",
+  "permissions": ["storage"],
+  "host_permissions": ["https://*.youtube.com/*"],
+  "content_scripts": [
+    {
+      "matches": ["https://*.youtube.com/*"],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": {
+    "16": "images/icon16.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  }
+}
