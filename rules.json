@@ -1,0 +1,39 @@
+{
+  "version": 1.0,
+  "lastUpdated": "2025-07-12T11:30:00Z",
+  "config": {
+    "hardJudolKeywords": [
+      "mamajitu",
+      "topas808",
+      "visi4d",
+      "mona4d",
+      "zeus77",
+      "slot88",
+      "dana4d",
+      "weton88",
+      "ligajp",
+      "dewaslot",
+      "gacorx",
+      "slotku",
+      "maxcuan",
+      "jpkali",
+      "autojp",
+      "scatternet",
+      "modalreceh",
+      "wdgacor",
+      "batre4d",
+      "probet855",
+      "kyt4d",
+      "pstoto99",
+      "indokasino"
+    ],
+    "gamblingEmojis": ["💰", "🎰", "💎", "🌟", "🎯", "⚡", "💵"],
+    "judolRegexList": [
+      "\\b(mona4d|zeus77|slot88|dana4d|weton88|mpo\\d+|oy4d|rtpslot|ligajp|dewaslot|mamajitu|gacorx|slotku|maxcuan|jpkali|autojp|scatternet|modalreceh|wdgacor|slotonline|jpauto|toto\\d+|pragmaticplay|pgsoft|habanero|microgaming|playtech|visi4d|garuda\\d+|kakekmerah|kakekzeus|scatterhitam|indokasino)\\b",
+      "\\b(daftar|login|klik|join|kunjungi|cek|cekbio|linkdibio|gabung|masuk|register|mampir|sikat|gasin|gaskeun|kuy)\\s.*?\\b(slot|gacor|jp|wd|maxwin|toto|situs|casino|bet|rtp|agen|bandar|jepe)\\b"
+    ],
+    "antiJudolRegex": ["\\b(makan|makanan|minum|minuman|masak|resep|enak|lezat)\\b", "\\b(keluarga|mama|papa|ibu|bapak|ayah|adik|kakak|anak)\\b", "\\b(sekolah|kampus|kelas|guru|dosen|ujian|tugas|pr|belajar)\\b"],
+    "personalWords": ["aku", "saya", "gue", "gw", "kita", "kamu", "kalian", "dia"],
+    "legitimateWords": ["bagus", "keren", "mantap", "seru", "lucu", "sedih", "menangis"]
+  }
+}
