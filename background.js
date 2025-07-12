@@ -1,5 +1,5 @@
 // Ganti dengan URL Raw dari GitHub Gist Anda
-const RULES_URL = "URL_RAW_GIST_ANDA";
+const RULES_URL = "https://gist.githubusercontent.com/adityadwi21/4bf7ef1f5136c20fda8f7786659b3668/raw/ed973f70d6b5371748f28936d3eab305a89ad662/rules.json";
 
 /**
  * Mengambil aturan dari URL, membandingkan versi, dan menyimpannya jika baru.
